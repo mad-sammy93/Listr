@@ -1,12 +1,10 @@
 <template>
   <div class="item">
-    <i>
-      <slot name="icon"></slot>
-    </i>
+    List Item
+    <h3>
+      <slot name="heading"></slot>
+    </h3>
     <div class="details">
-      <h3>
-        <slot name="heading"></slot>
-      </h3>
       <slot></slot>
     </div>
   </div>

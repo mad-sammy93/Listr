@@ -1,16 +1,4 @@
 <script lang="ts" setup>
-// let checkboxes : object = document.querySelectorAll("input[type='checkbox']");
-// checkboxes.forEach(function (checkbox) {
-// 	checkbox.addEventListener("click", checkboxHandler);
-// });
-// function checkboxHandler() {
-// 	if (checked.value === true) {
-// 		this.closest(".checkbox-group").classList.add("checked");
-// 	} else {
-// 		this.closest(".checkbox-group").classList.remove("checked");
-// 	}
-// }
-
 </script>
 <template>
     <div class="checkbox-container">
