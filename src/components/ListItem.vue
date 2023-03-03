@@ -1,12 +1,8 @@
 <template>
   <div class="item">
-    List Item
     <h3>
-      <slot name="heading"></slot>
-    </h3>
-    <div class="details">
       <slot></slot>
-    </div>
+    </h3>
   </div>
 </template>
 
@@ -41,7 +37,7 @@ h3 {
 @media (min-width: 1024px) {
   .item {
     margin-top: 0;
-    padding: 0.4rem 0 1rem calc(var(--section-gap) / 2);
+    /* padding: 0.4rem 0 1rem calc(var(--section-gap) / 2); */
   }
 
   i {
