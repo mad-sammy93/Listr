@@ -33,14 +33,14 @@
 <div class="lists">
   <main>
     <form @submit.prevent="addNewToDo">
-      <label for="">New Todo</label>
-      <input name="newTodo" v-model="newTodo">
+      <label for="">Add item</label>
+      <input name="newTodo" class="add_todo" v-model="newTodo">
       <button>Add</button>
     </form>
-    <div >
+    <!-- <div >
       {{ newTodo }}
-    </div>
-    <list-card>
+    </div> -->
+    <list-card >
       <button @click="markAllDone">Mark All Done</button>
       <ul>
         <li v-for="(todo,index) in todos" :key="todo.id" :class="{strike:todo.done}">
@@ -71,6 +71,16 @@
   } */
   .todo{
     cursor:pointer;
+  }
+  .add_todo{
+    background-color: transparent;
+    border: 0;
+    font-size: 2rem;
+    color: azure;
+  }
+  label {
+    font-size: 2em;
+    color: white;
   }
   ul {
     padding: 0;

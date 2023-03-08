@@ -64,7 +64,14 @@ nav a:first-of-type {
     /* place-items: flex-start; */
     /* flex-wrap: wrap; */
   }
-
+  input,
+textarea {
+  display: block;
+  width: 100%;
+  font: inherit;
+  border: 1px solid #ccc;
+  padding: 0.15rem;
+}
   nav {
     text-align: left;
     margin-left: 0rem;
