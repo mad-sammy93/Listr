@@ -3,6 +3,7 @@
   import ListItem from '../components/ListItem.vue'
   import ListCard from '../components/UI/ListCard.vue'
   import RemoveButton from '../components/UI/RemoveButton.vue'
+  import BaseButton from '../components/UI/BaseButton.vue'
 
   let newTodo : any = ref('');
   let todos : any = ref([]);
@@ -33,15 +34,15 @@
 <div class="lists">
   <main>
     <form @submit.prevent="addNewToDo">
-      <label for="">Add item</label>
-      <input name="newTodo" class="add_todo" v-model="newTodo">
-      <button>Add</button>
+      <!-- <label for="">Add item</label> -->
+      <input name="newTodo" class="add_todo" v-model="newTodo" placeholder="Add item">
+      <base-button>Add</base-button>
     </form>
     <!-- <div >
       {{ newTodo }}
     </div> -->
     <list-card >
-      <button @click="markAllDone">Mark All Done</button>
+      <base-button @click="markAllDone">Mark All Done</base-button>
       <ul>
         <li v-for="(todo,index) in todos" :key="todo.id" :class="{strike:todo.done}">
           <ListItem   class="todo"  @click="toggleDone(todo)">{{ todo.content }}</ListItem><remove-button @click="removeTodo(index)"/>
@@ -76,11 +77,17 @@
     background-color: transparent;
     border: 0;
     font-size: 2rem;
-    color: azure;
+    color: var(--color-text);    
+    border-bottom: 1px solid var(--color-text);
+
   }
   label {
     font-size: 2em;
-    color: white;
+    color: var(--color-text);
+    opacity: 0.7;
+  }
+  ::placeholder{
+    font-size: 1.7rem;
   }
   ul {
     padding: 0;
@@ -88,15 +95,15 @@
   }   
   ul li{
     display: flex;
-    list-style: none; /* Remove HTML bullets */
-    padding-left: 10px;
+    list-style: none;
+    padding-left: 40px;
   }
   li.strike:before {
     content: '✅';
     position: absolute;
     top: 4px;
-    left: -20px;
-    /* padding-left: 40px; */
+    left: 0px;
+    padding-left: 5px;
     padding-right: 16px;
   }
 }

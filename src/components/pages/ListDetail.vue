@@ -2,22 +2,10 @@
 </script>
 <template>
     <div class="checkbox-container">
-        <h2 class="heading">To-do list</h2>
+        <h2 class="heading">LIST NAME</h2>
         <div class="checkbox-group">
             <input type="checkbox" id="checkbox1">
             <label for="checkbox1">Listen to music</label>
-        </div>
-        <div class="checkbox-group">
-            <input type="checkbox" id="checkbox2">
-            <label for="checkbox2">Learn JavaScript</label>
-        </div>
-        <div class="checkbox-group">
-            <input type="checkbox" id="checkbox3">
-            <label for="checkbox3" class="checkbox-label">Watch a movie</label>
-        </div>
-        <div class="checkbox-group">
-            <input type="checkbox" id="checkbox4">
-            <label for="checkbox4">Read emails</label>
         </div>
     </div>
 </template>
@@ -90,7 +78,7 @@ input[type=checkbox] ~ label:before {
 }
 
 input[type=checkbox]:checked ~ label {
-  color: #ffffff;
+    color: var(--color-text);
 }
 
 input[type=checkbox]:checked ~ label:before {
