@@ -1,12 +1,11 @@
 // import { defineAsyncComponent } from 'vue';
 import { createRouter, createWebHistory } from 'vue-router'
 
-
 import ListsView from '../views/ListsView.vue'
 import Dashboard from '../views/DashBoard.vue'
+import Register from '@/components/pages/auth/TheRegister.vue'
 
 // import NotFound from '../components/pages/NotFound.vue';
-
 
 // import store from '../stores/index.js';
 
@@ -32,18 +31,18 @@ const router = createRouter({
       // route level code-splitting
       // this generates a separate chunk (About.[hash].js) for this route
       // which is lazy-loaded when the route is visited.
-      component: () => import('../components/pages/ListDetail.vue'),
+      component: () => import('../components/pages/ListDetail.vue')
     },
     {
       path: '/lists/:id',
       name: 'list-single',
       component: () => import('../components/pages/ListDetail.vue'),
       children: [
-       {
-         path: '/lists',
-         name: 'list-detail',
-         component: () => import('../components/pages/ListDetail.vue'),
-       }
+        {
+          path: '/lists',
+          name: 'list-detail',
+          component: () => import('../components/pages/ListDetail.vue')
+        }
       ]
     },
     {
@@ -52,7 +51,7 @@ const router = createRouter({
       // route level code-splitting
       // this generates a separate chunk (About.[hash].js) for this route
       // which is lazy-loaded when the route is visited.
-      component: () => import('../components/pages/auth/TheRegister.vue')
+      component: Register
     },
     {
       path: '/login',
@@ -72,7 +71,7 @@ const router = createRouter({
 })
 router.beforeEach((to, _from, next) => {
   const isAuthenticated = localStorage.getItem('user')
-  if (to.matched.some(record => record.meta.requiresAuth)) {
+  if (to.matched.some((record) => record.meta.requiresAuth)) {
     if (!isAuthenticated) {
       next('/register')
     } else {

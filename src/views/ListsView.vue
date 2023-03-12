@@ -1,12 +1,23 @@
 <script setup lang="ts">
-  import { ref } from 'vue'
+  import { ref,onMounted } from 'vue'
   import ListItem from '../components/ListItem.vue'
   import ListCard from '../components/UI/ListCard.vue'
   import RemoveButton from '../components/UI/RemoveButton.vue'
   import BaseButton from '../components/UI/BaseButton.vue'
+  import { useRouter } from 'vue-router'
+
 
   let newTodo : any = ref('');
   let todos : any = ref([]);
+
+  const router = useRouter()
+  onMounted(() => {
+    let user =localStorage.getItem('user-logged-in');
+    if(!user){
+      router.push({name:'register'})
+    }
+
+  })
 
   function addNewToDo() {
     console.log(newTodo.value);
